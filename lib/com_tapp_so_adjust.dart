@@ -33,10 +33,9 @@ class ComTappSoAdjust {
     required String authToken,
     required EnvironmentType env,
     required String tappToken,
-    required AffiliateType affiliate,
   }) async {
     debugPrint(
-        '[ComTappSoAdjust.start] authToken=$authToken, env=${env.name}, tappToken=$tappToken, affiliate=${affiliate.name}');
+        '[ComTappSoAdjust.start] authToken=$authToken, env=${env.name}, tappToken=$tappToken');
     if (!Platform.isAndroid && !Platform.isIOS) {
       return _unsupported('initialize');
     }
@@ -44,7 +43,6 @@ class ComTappSoAdjust {
       'authToken': authToken,
       'environment': env.name,
       'tappToken': tappToken,
-      'affiliate': affiliate.name,
     });
     debugPrint('[ComTappSoAdjust.start] initialization complete');
   }

@@ -170,16 +170,11 @@ class ComTappSoAdjustPlugin : FlutterPlugin, MethodChannel.MethodCallHandler {
     val auth      = args["authToken"]   as? String ?: ""
     val envStr    = args["environment"] as? String ?: "SANDBOX"
     val tappToken = args["tappToken"]   as? String ?: ""
-    val affStr    = args["affiliate"]   as? String ?: "TAPP"
 
     val env = if (envStr.equals("PRODUCTION", true) || envStr.equals("PROD", true))
       Environment.PRODUCTION else Environment.SANDBOX
 
-    val aff = when (affStr.uppercase()) {
-      "ADJUST"   -> Affiliate.ADJUST
-      "APPFLYER" -> Affiliate.APPSFLYER
-      else       -> Affiliate.TAPP
-    }
+    val aff = Affiliate.ADJUST
 
     tapp.start(com.example.tapp.utils.TappConfiguration(auth, env, tappToken, aff))
     Log.d(TAG, "initialize() complete")

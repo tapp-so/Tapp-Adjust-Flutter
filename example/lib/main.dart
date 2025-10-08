@@ -115,7 +115,6 @@ class _MyAppState extends State<MyApp> {
         authToken: 'authToken',
         env: EnvironmentType.SANDBOX,
         tappToken: 'tappToken',
-        affiliate: AffiliateType.ADJUST,
       );
     } on PlatformException {
       // ignore

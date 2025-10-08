@@ -41,8 +41,7 @@ public class ComTappSoAdjustPlugin: NSObject, FlutterPlugin {
       guard
         let auth      = args?["authToken"]   as? String,
         let envStr    = args?["environment"] as? String,
-        let tappToken = args?["tappToken"]   as? String,
-        let affiliate = args?["affiliate"]   as? String
+        let tappToken = args?["tappToken"]   as? String
       else {
         result(FlutterError(code: "BAD_ARGS", message: "Missing initialize args", details: nil))
         return
@@ -52,7 +51,7 @@ public class ComTappSoAdjustPlugin: NSObject, FlutterPlugin {
         authToken: auth,
         env: envStr,                  // string-based initializer (e.g., "PRODUCTION"/"SANDBOX")
         tappToken: tappToken,
-        affiliateName: affiliate,     // e.g., "adjust"
+        affiliateName: "adjust",     // e.g., "adjust"
         bundleID: bundleID
       )
       Tapp.start(config: config, delegate: self)
