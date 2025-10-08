@@ -1,0 +1,56 @@
+PODS:
+  - Adjust (5.4.5):
+    - Adjust/Adjust (= 5.4.5)
+  - Adjust/Adjust (5.4.5):
+    - AdjustSignature (= 3.47.0)
+  - AdjustSignature (3.47.0)
+  - com_tapp_so_adjust (0.0.1):
+    - Flutter
+    - Tapp
+    - Tapp-Adjust
+    - Tapp-Networking
+  - Flutter (1.0.0)
+  - integration_test (0.0.1):
+    - Flutter
+  - Tapp (1.0.86):
+    - Tapp-Networking
+  - Tapp-Adjust (1.0.8):
+    - Adjust
+    - Tapp
+    - Tapp-Networking
+  - Tapp-Networking (1.0.85)
+
+DEPENDENCIES:
+  - com_tapp_so_adjust (from `.symlinks/plugins/com_tapp_so_adjust/ios`)
+  - Flutter (from `Flutter`)
+  - integration_test (from `.symlinks/plugins/integration_test/ios`)
+
+SPEC REPOS:
+  trunk:
+    - Adjust
+    - AdjustSignature
+    - Tapp
+    - Tapp-Adjust
+    - Tapp-Networking
+
+EXTERNAL SOURCES:
+  com_tapp_so_adjust:
+    :path: ".symlinks/plugins/com_tapp_so_adjust/ios"
+  Flutter:
+    :path: Flutter
+  integration_test:
+    :path: ".symlinks/plugins/integration_test/ios"
+
+SPEC CHECKSUMS:
+  Adjust: 010c8b2b582add6ba200469c82c4d8c9e5ddb198
+  AdjustSignature: d634fc6b66295c38807f3b4e50978c1f72355950
+  com_tapp_so_adjust: 1b4d8002dc70663cd64b9fc6eb6cfff1914618a8
+  Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
+  integration_test: 4a889634ef21a45d28d50d622cf412dc6d9f586e
+  Tapp: 7ff3eae78e44bec1c06e91dd4a5961068ec953ee
+  Tapp-Adjust: d2abe404b3eb2c9101120a3ec392d5960847d27d
+  Tapp-Networking: 8ff8a1f00cff72f88ef46dcc15556c375e43b58f
+
+PODFILE CHECKSUM: 1959d098c91d8a792531a723c4a9d7e9f6a01e38
+
+COCOAPODS: 1.16.2
