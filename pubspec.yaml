@@ -1,6 +1,6 @@
 name: com_tapp_so_adjust
 description: "A Flutter plugin providing unified access to the Tapp SDK on Android and iOS, featuring deferred deep-link handling, affiliate URL generation, event tracking, and full Adjust analytics integration."
-version: 1.0.2
+version: 1.0.3
 homepage: https://www.tapp.so/
 repository: https://github.com/tapp-so/Tapp-Adjust-Flutter
 

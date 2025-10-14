@@ -55,7 +55,7 @@ android {
         testImplementation("org.jetbrains.kotlin:kotlin-test")
         testImplementation("org.mockito:mockito-core:5.0.0")
 
-        implementation("com.github.tapp-so.Tapp-Android:Tapp-Adjust:1.0.1")
+        implementation("com.github.tapp-so.Tapp-Android:Tapp-Adjust:1.0.2")
     }
 
     testOptions {
