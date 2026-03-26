@@ -13,6 +13,7 @@ import io.flutter.plugin.common.EventChannel
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import kotlinx.coroutines.*
+import kotlin.math.roundToLong
 
 // ------- Tapp SDK (your native lib) -------
 import com.example.tapp.Tapp
@@ -205,9 +206,20 @@ class ComTappSoAdjustPlugin : FlutterPlugin, MethodChannel.MethodCallHandler {
     Log.d(TAG, "handleTappEvent() args=${call.arguments}")
     val actionStr = call.argument<String>("eventAction")?.lowercase()
       ?: return result.error("BAD_ARGS", "Missing eventAction", null)
+    
+    val customValue = call.argument<String>("customValue")
+    val metadata    = call.argument<Map<String, Any>>("metadata") ?: emptyMap()
 
     scope.launch {
-      tapp.handleTappEvent(RequestModels.TappEvent(RequestModels.EventAction.custom(actionStr)))
+      // We'll pass the actionStr (which is the enum name or 'custom_...') 
+      // AND the metadata to the Constructor. 
+      // NOTE: We assume TappEvent constructor signature is (action, metadata).
+      tapp.handleTappEvent(
+          RequestModels.TappEvent(
+              RequestModels.EventAction.custom(actionStr),
+              metadata = metadata
+          )
+      )
       Log.d(TAG, "handleTappEvent() complete")
       withContext(Dispatchers.Main) { result.success(null) }
     }
@@ -312,15 +324,41 @@ class ComTappSoAdjustPlugin : FlutterPlugin, MethodChannel.MethodCallHandler {
 
   private fun trackPlayStoreSubscription(call: MethodCall, result: MethodChannel.Result) {
     Log.d(TAG, "trackPlayStoreSubscription() args=${call.arguments}")
-    val sub = call.argument<Map<String, Any>>("subscription")!!
+    val sub = call.argument<Map<String, Any>>("subscription")
+      ?: return result.error("BAD_ARGS", "Missing subscription", null)
+
+    val priceRaw = sub["price"] as? Number
+      ?: return result.error("BAD_ARGS", "Missing or invalid subscription.price", null)
+    val currency = sub["currency"] as? String
+      ?: return result.error("BAD_ARGS", "Missing subscription.currency", null)
+    val sku = sub["sku"] as? String
+      ?: return result.error("BAD_ARGS", "Missing subscription.sku", null)
+    val orderId = sub["orderId"] as? String
+      ?: return result.error("BAD_ARGS", "Missing subscription.orderId", null)
+    val signature = sub["signature"] as? String
+      ?: return result.error("BAD_ARGS", "Missing subscription.signature", null)
+    val purchaseToken = sub["purchaseToken"] as? String
+      ?: return result.error("BAD_ARGS", "Missing subscription.purchaseToken", null)
+
+    // Adjust Play subscription expects a long price value (micros).
+    // Accept decimal Dart prices by converting them to micros.
+    val priceDouble = priceRaw.toDouble()
+    val priceMicros = if (priceDouble % 1.0 != 0.0) {
+      (priceDouble * 1_000_000.0).roundToLong()
+    } else {
+      priceRaw.toLong()
+    }
+
+    val purchaseTime = (sub["purchaseTime"] as? Number)?.toLong()
+
     tapp.adjustTrackPlayStoreSubscription(
-      sub["price"] as Long,
-      sub["currency"] as String,
-      sub["sku"] as String,
-      sub["orderId"] as String,
-      sub["signature"] as String,
-      sub["purchaseToken"] as String,
-      sub["purchaseTime"] as? Long
+      priceMicros,
+      currency,
+      sku,
+      orderId,
+      signature,
+      purchaseToken,
+      purchaseTime
     )
     result.success(null)
   }

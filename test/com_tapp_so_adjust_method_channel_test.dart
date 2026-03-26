@@ -6,7 +6,7 @@ void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
   MethodChannelComTappSoAdjust platform = MethodChannelComTappSoAdjust();
-  const MethodChannel channel = MethodChannel('com_tapp_so_adjust');
+  const MethodChannel channel = MethodChannel('com.tapp.so.adjust/methods');
 
   setUp(() {
     TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger

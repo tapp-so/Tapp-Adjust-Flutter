@@ -284,17 +284,20 @@ enum EventAction {
 class TappEventType {
   final EventAction? eventAction;
   final String? customValue;
+  final Map<String, Object?>? metadata;
 
   TappEventType({
     this.eventAction,
     this.customValue,
+    this.metadata,
   });
 
   @override
   String toString() {
     return 'TappEventType('
         'eventAction: $eventAction, '
-        'customValue: $customValue'
+        'customValue: $customValue, '
+        'metadata: $metadata'
         ')';
   }
 }

@@ -122,7 +122,9 @@ await tapp.handleTappEvent(eventAction: EventAction.purchase);
 await tapp.handleTappEvent(
   eventAction: EventAction.custom,
   customValue: 'level_up',
+  metadata: {'level': 12, 'source': 'onboarding'},
 );
+// Metadata values must be primitive: String, num, bool.
 
 Deferred link streams:
 // When a deferred link arrives
@@ -173,7 +175,7 @@ generateUrl({influencer, adGroup, creative, data})
 
 handleEvent(String eventToken)
 
-handleTappEvent({eventAction, customValue})
+handleTappEvent({eventAction, customValue, metadata})
 
 fetchLinkData(String deepLink)
 
