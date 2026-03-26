@@ -156,7 +156,13 @@ class _MyAppState extends State<MyApp> {
 
   Future<void> _handleTappEvent() async {
     await _sdk.handleTappEvent(
-      eventAction: EventAction.tapp_purchase,
+      eventAction: EventAction.custom,
+      customValue: 'my_custom_event',
+      metadata: {
+        'value': 19.99,
+        'currency': 'USD',
+        'flow': 'example_app',
+      },
     );
     if (!mounted) return;
     setState(() => _tappEvt = 'OK');
