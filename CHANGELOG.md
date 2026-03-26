@@ -1,3 +1,26 @@
+## 1.1.0 – 2026-03-26
+
+### Changed
+
+- `simulateTestEvent()` is no longer part of the active public Dart API surface.
+- README reworked into an integration-first guide with a clear onboarding flow:
+  prerequisites, installation, deep-link setup, checklist, minimal integration, verification, bootstrap pattern, common flows, platform notes, troubleshooting.
+- Deep-link documentation now explicitly separates:
+  - what clients configure (Tapp dashboard + native iOS/Android link handling)
+  - what Tapp manages (`apple-app-site-association` and `assetlinks.json` after dashboard setup)
+- Added dashboard deep-link field alignment guidance, including:
+  - `SHA-256 Certificate Fingerprint`
+  - `Android App Scheme`
+  - `App ID Prefix`
+  - `iOS App Scheme`
+- Example app updated to remove test-event simulation UI/listener tied to the removed test-only API.
+
+### Metadata
+
+- Added publish metadata links in `pubspec.yaml`:
+  - `issue_tracker`
+  - `documentation`
+
 ## 1.0.2 – 2025-10-08
 
 ### Changed

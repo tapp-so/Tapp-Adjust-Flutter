@@ -17,7 +17,6 @@ class _MyAppState extends State<MyApp> {
 
   StreamSubscription<DeferredDeepLinkData>? _deferredSub;
   StreamSubscription<FailResolveData>? _failSub;
-  StreamSubscription<String?>? _testListener;
 
   // —— Core SDK state
   String _version = '…';
@@ -28,8 +27,6 @@ class _MyAppState extends State<MyApp> {
   String _link = '…';
   String _orig = '…';
   String _cfg = '…';
-
-  String _testMsg = '…';
 
   // —— Deferred‐link events
   String _deferred = '…';
@@ -90,18 +87,12 @@ class _MyAppState extends State<MyApp> {
         _fail = 'url=${err.url}\nerror=${err.error}';
       });
     });
-    // Test listener
-    _testListener = _sdk.onTestListener.listen((msg) {
-      if (!mounted) return;
-      setState(() => _testMsg = msg ?? 'null');
-    });
   }
 
   @override
   void dispose() {
     _deferredSub?.cancel();
     _failSub?.cancel();
-    _testListener?.cancel();
     super.dispose();
   }
 
@@ -500,10 +491,6 @@ class _MyAppState extends State<MyApp> {
     setState(() => _skanResult = 'OK');
   }
 
-  Future<void> _simulateTestEvent() async {
-    await _sdk.simulateTestEvent();
-  }
-
   Widget _buildButton(String label, VoidCallback onTap, String value) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -541,10 +528,6 @@ class _MyAppState extends State<MyApp> {
             Text('Received:\n$_deferred'),
             Text('Fail Resolve:\n$_fail'),
             const Divider(),
-            // Test Simulation
-            const SizedBox(height: 16),
-            _buildButton('Simulate Test Event', _simulateTestEvent, _testMsg),
-            // Adjust
             _buildButton('adjustEnable', _onAdjustEnable, _adjustEnableResult),
             _buildButton(
                 'adjustDisable', _onAdjustDisable, _adjustDisableResult),
