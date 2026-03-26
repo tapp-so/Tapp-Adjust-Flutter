@@ -108,7 +108,8 @@ public class ComTappSoAdjustPlugin: NSObject, FlutterPlugin {
         result(FlutterError(code: "BAD_ARGS", message: "Missing eventAction", details: nil))
         return
       }
-      let event = TappEvent(eventActionName: action)
+      let metadata = args?["metadata"] as? [String: Any]
+      let event = TappEvent(eventActionName: action, metadata: metadata)
       Tapp.handleTappEvent(event: event)
       result(nil)
 

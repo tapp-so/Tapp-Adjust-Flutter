@@ -7,7 +7,7 @@ import 'com_tapp_so_adjust_platform_interface.dart';
 class MethodChannelComTappSoAdjust extends ComTappSoAdjustPlatform {
   /// The method channel used to interact with the native platform.
   @visibleForTesting
-  final methodChannel = const MethodChannel('com_tapp_so_adjust');
+  final methodChannel = const MethodChannel('com.tapp.so.adjust/methods');
 
   @override
   Future<String?> getPlatformVersion() async {
