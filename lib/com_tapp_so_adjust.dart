@@ -195,12 +195,13 @@ class ComTappSoAdjust {
     return cfg;
   }
 
-  Future<void> simulateTestEvent() async {
-    if (!Platform.isAndroid) {
-      return _unsupported('simulateTestEvent');
-    }
-    await _method.invokeMethod('simulateTestEvent');
-  }
+  // Disabled from public Dart API surface.
+  // Future<void> simulateTestEvent() async {
+  //   if (!Platform.isAndroid) {
+  //     return _unsupported('simulateTestEvent');
+  //   }
+  //   await _method.invokeMethod('simulateTestEvent');
+  // }
 
   // ——— Deferred-link events ———
 
@@ -308,8 +309,9 @@ class ComTappSoAdjust {
 
   Future<String?> adjustGetGooglePlayInstallReferrer() async {
     debugPrint('[ComTappSoAdjust.adjustGetGooglePlayInstallReferrer]');
-    if (!Platform.isAndroid)
+    if (!Platform.isAndroid) {
       return _unsupported('adjustGetGooglePlayInstallReferrer');
+    }
     final r = await _method
         .invokeMethod<String>('adjustGetGooglePlayInstallReferrer');
     debugPrint(
@@ -360,8 +362,9 @@ class ComTappSoAdjust {
   Future<void> adjustTrackThirdPartySharing(bool enabled) async {
     debugPrint(
         '[ComTappSoAdjust.adjustTrackThirdPartySharing] enabled=$enabled');
-    if (!Platform.isAndroid)
+    if (!Platform.isAndroid) {
       return _unsupported('adjustTrackThirdPartySharing');
+    }
     await _method
         .invokeMethod('adjustTrackThirdPartySharing', {'enabled': enabled});
     debugPrint('[ComTappSoAdjust.adjustTrackThirdPartySharing] done');
@@ -370,8 +373,9 @@ class ComTappSoAdjust {
   Future<void> adjustTrackMeasurementConsent(bool consent) async {
     debugPrint(
         '[ComTappSoAdjust.adjustTrackMeasurementConsent] consent=$consent');
-    if (!Platform.isAndroid)
+    if (!Platform.isAndroid) {
       return _unsupported('adjustTrackMeasurementConsent');
+    }
     await _method
         .invokeMethod('adjustTrackMeasurementConsent', {'consent': consent});
     debugPrint('[ComTappSoAdjust.adjustTrackMeasurementConsent] done');
@@ -381,8 +385,9 @@ class ComTappSoAdjust {
       String key, String value) async {
     debugPrint(
         '[ComTappSoAdjust.adjustAddGlobalCallbackParameter] key=$key value=$value');
-    if (!Platform.isAndroid)
+    if (!Platform.isAndroid) {
       return _unsupported('adjustAddGlobalCallbackParameter');
+    }
     await _method.invokeMethod(
         'adjustAddGlobalCallbackParameter', {'key': key, 'value': value});
     debugPrint('[ComTappSoAdjust.adjustAddGlobalCallbackParameter] done');
@@ -391,8 +396,9 @@ class ComTappSoAdjust {
   Future<void> adjustAddGlobalPartnerParameter(String key, String value) async {
     debugPrint(
         '[ComTappSoAdjust.adjustAddGlobalPartnerParameter] key=$key value=$value');
-    if (!Platform.isAndroid)
+    if (!Platform.isAndroid) {
       return _unsupported('adjustAddGlobalPartnerParameter');
+    }
     await _method.invokeMethod(
         'adjustAddGlobalPartnerParameter', {'key': key, 'value': value});
     debugPrint('[ComTappSoAdjust.adjustAddGlobalPartnerParameter] done');
@@ -401,8 +407,9 @@ class ComTappSoAdjust {
   Future<void> adjustRemoveGlobalCallbackParameter(String key) async {
     debugPrint(
         '[ComTappSoAdjust.adjustRemoveGlobalCallbackParameter] key=$key');
-    if (!Platform.isAndroid)
+    if (!Platform.isAndroid) {
       return _unsupported('adjustRemoveGlobalCallbackParameter');
+    }
     await _method
         .invokeMethod('adjustRemoveGlobalCallbackParameter', {'key': key});
     debugPrint('[ComTappSoAdjust.adjustRemoveGlobalCallbackParameter] done');
@@ -410,8 +417,9 @@ class ComTappSoAdjust {
 
   Future<void> adjustRemoveGlobalPartnerParameter(String key) async {
     debugPrint('[ComTappSoAdjust.adjustRemoveGlobalPartnerParameter] key=$key');
-    if (!Platform.isAndroid)
+    if (!Platform.isAndroid) {
       return _unsupported('adjustRemoveGlobalPartnerParameter');
+    }
     await _method
         .invokeMethod('adjustRemoveGlobalPartnerParameter', {'key': key});
     debugPrint('[ComTappSoAdjust.adjustRemoveGlobalPartnerParameter] done');
@@ -419,16 +427,18 @@ class ComTappSoAdjust {
 
   Future<void> adjustRemoveGlobalCallbackParameters() async {
     debugPrint('[ComTappSoAdjust.adjustRemoveGlobalCallbackParameters]');
-    if (!Platform.isAndroid)
+    if (!Platform.isAndroid) {
       return _unsupported('adjustRemoveGlobalCallbackParameters');
+    }
     await _method.invokeMethod('adjustRemoveGlobalCallbackParameters');
     debugPrint('[ComTappSoAdjust.adjustRemoveGlobalCallbackParameters] done');
   }
 
   Future<void> adjustRemoveGlobalPartnerParameters() async {
     debugPrint('[ComTappSoAdjust.adjustRemoveGlobalPartnerParameters]');
-    if (!Platform.isAndroid)
+    if (!Platform.isAndroid) {
       return _unsupported('adjustRemoveGlobalPartnerParameters');
+    }
     await _method.invokeMethod('adjustRemoveGlobalPartnerParameters');
     debugPrint('[ComTappSoAdjust.adjustRemoveGlobalPartnerParameters] done');
   }
@@ -486,8 +496,9 @@ class ComTappSoAdjust {
       PlayStoreSubscription subscription) async {
     debugPrint(
         '[ComTappSoAdjust.adjustTrackPlayStoreSubscription] subscription=$subscription');
-    if (!Platform.isAndroid)
+    if (!Platform.isAndroid) {
       return _unsupported('adjustTrackPlayStoreSubscription');
+    }
     await _method.invokeMethod('adjustTrackPlayStoreSubscription', {
       'subscription': {
         'price': subscription.price,
@@ -531,8 +542,9 @@ class ComTappSoAdjust {
 
   Future<int?> adjustRequestAppTrackingAuthorization() async {
     debugPrint('[ComTappSoAdjust.adjustRequestAppTrackingAuthorization]');
-    if (!Platform.isIOS)
+    if (!Platform.isIOS) {
       return _unsupported('adjustRequestAppTrackingAuthorization');
+    }
     final status = await _method
         .invokeMethod<int>('adjustRequestAppTrackingAuthorization');
     debugPrint(
@@ -542,8 +554,9 @@ class ComTappSoAdjust {
 
   Future<int?> adjustAppTrackingAuthorizationStatus() async {
     debugPrint('[ComTappSoAdjust.adjustAppTrackingAuthorizationStatus]');
-    if (!Platform.isIOS)
+    if (!Platform.isIOS) {
       return _unsupported('adjustAppTrackingAuthorizationStatus');
+    }
     final status =
         await _method.invokeMethod<int>('adjustAppTrackingAuthorizationStatus');
     debugPrint(
