@@ -1,3 +1,14 @@
+## 1.1.1 - 2026-07-06
+
+### Changed
+
+- Updated Android `Tapp-Adjust` native dependency to `1.1.5`.
+- Pinned iOS native dependencies to tested versions:
+  - `Tapp` `1.1.22`
+  - `Tapp-Adjust` `1.1.25`
+  - `Tapp-Networking` `1.1.6`
+- No public Dart API or native bridge signature changes.
+
 ## 1.1.0 – 2026-03-26
 
 ### Changed
