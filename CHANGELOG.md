@@ -1,11 +1,21 @@
-## 2.0.0
+## 2.0.0 - 2026-11-DD
 
-* **Breaking:** minimum iOS is now 15.0, required by Tapp 1.1.23 / Tapp-Adjust 1.1.26 / Tapp-Networking 1.1.7. Apps targeting iOS 13 or 14 must raise their deployment target.
-* Pinned iOS native dependencies: `Tapp` `1.1.23`, `Tapp-Adjust` `1.1.26`, and `Tapp-Networking` `1.1.7`. Tapp-Adjust 1.1.26 raises its iOS minimum to 15.0 and requires Tapp 1.1.23 / Tapp-Networking 1.1.7 or later. It has no source changes.
-* Bumped Android native dependency to `Tapp-Adjust:1.1.6`:
-  * When the backend reports that a deep-link impression was already counted for the device (for example, a reinstall within about 90 days), the deferred link is now delivered (`onDeferredLinkReceived`) instead of a resolve failure (`onDidFailResolvingURL`).
-  * Tapp-Core now declares `android.permission.INTERNET`, which is merged into consuming apps. Adjust integrations already received this permission from the Adjust SDK.
-* No Dart API, model, method-channel, or native bridge signature changes. The affiliate remains Adjust.
+### Breaking
+
+- Minimum iOS is now 15.0, required by Tapp 1.1.23 / Tapp-Adjust 1.1.26 / Tapp-Networking 1.1.7. Apps targeting iOS 13 or 14 must raise their deployment target.
+
+### Changed
+
+- Pinned iOS native dependencies:
+  - `Tapp` `1.1.23`
+  - `Tapp-Adjust` `1.1.26`
+  - `Tapp-Networking` `1.1.7`
+- Tapp-Adjust 1.1.26 raises its iOS minimum to 15.0 and requires Tapp 1.1.23 / Tapp-Networking 1.1.7 or later. It has no source changes.
+- Updated Android `Tapp-Adjust` native dependency to `1.1.6`:
+  - When the backend reports that a deep-link impression was already counted for the device (for example, a reinstall within about 90 days), the deferred link is now delivered (`onDeferredLinkReceived`) instead of a resolve failure (`onDidFailResolvingURL`).
+  - Tapp-Core now declares `android.permission.INTERNET`, which is merged into consuming apps. Adjust integrations already received this permission from the Adjust SDK.
+- Native-only 1.1.6 fixes (install-referrer handling and its retry) do not apply to Adjust integrations.
+- No public Dart API, model, method-channel, or native bridge signature changes. The affiliate remains Adjust.
 
 ## 1.1.1 - 2026-07-06
 
