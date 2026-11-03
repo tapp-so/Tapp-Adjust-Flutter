@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'com_tapp_so_adjust'
-  s.version          = '0.0.1'
+  s.version          = '2.0.0'
   s.summary          = 'A new Flutter plugin project.'
   s.description      = <<-DESC
 A new Flutter plugin project.
@@ -15,15 +15,15 @@ A new Flutter plugin project.
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
-  s.platform = :ios, '13.0'
+  s.platform = :ios, '15.0'
 
   # Flutter.framework does not contain a i386 slice.
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
   s.swift_version = '5.0'
 
-  s.dependency "Tapp", "= 1.1.22"
-  s.dependency "Tapp-Adjust", "= 1.1.25"
-  s.dependency "Tapp-Networking", "= 1.1.6"
+  s.dependency "Tapp", "= 1.1.23"
+  s.dependency "Tapp-Adjust", "= 1.1.26"
+  s.dependency "Tapp-Networking", "= 1.1.7"
 
   # If your plugin requires a privacy manifest, for example if it uses any
   # required reason APIs, update the PrivacyInfo.xcprivacy file to describe your

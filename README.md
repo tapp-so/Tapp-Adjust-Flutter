@@ -17,7 +17,7 @@
   - `compileSdk 34` (or higher)
   - Java/Kotlin target `1.8` (or higher)
 - iOS app configuration:
-  - deployment target `13.0` (or higher)
+  - deployment target `15.0` (or higher)
 
 ## Installation
 
@@ -26,7 +26,7 @@
 ```yaml
 # pubspec.yaml
 dependencies:
-  com_tapp_so_adjust: ^1.1.0
+  com_tapp_so_adjust: ^2.0.0
 ```
 
 ```bash
@@ -73,11 +73,11 @@ android {
 
 ### 3) iOS setup
 
-Set the iOS deployment target to `13.0` or later.
+Set the iOS deployment target to `15.0` or later.
 
 ```ruby
 # ios/Podfile
-platform :ios, '13.0'
+platform :ios, '15.0'
 ```
 
 Then install/update pods.
@@ -175,7 +175,7 @@ This setup is required for:
 - [ ] Add the package and run `flutter pub get`.
 - [ ] Configure Android repositories with JitPack.
 - [ ] Confirm Android `minSdk 24` / `compileSdk 34` and Java/Kotlin `1.8+`.
-- [ ] Confirm iOS deployment target `13.0+`.
+- [ ] Confirm iOS deployment target `15.0+`.
 - [ ] Configure deep-link settings in the Tapp dashboard and enable native link handling for iOS and Android.
 - [ ] Call `start(...)` once before link/event operations.
 - [ ] Run the smoke test from **Verify Integration**.
