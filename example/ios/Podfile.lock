@@ -1,24 +1,24 @@
 PODS:
-  - Adjust (5.7.0):
-    - Adjust/Adjust (= 5.7.0)
-  - Adjust/Adjust (5.7.0):
-    - AdjustSignature (= 3.67.0)
-  - AdjustSignature (3.67.0)
-  - com_tapp_so_adjust (0.0.1):
+  - Adjust (5.8.1):
+    - Adjust/Adjust (= 5.8.1)
+  - Adjust/Adjust (5.8.1):
+    - AdjustSignature (= 5.8.0)
+  - AdjustSignature (5.8.0)
+  - com_tapp_so_adjust (2.0.1):
     - Flutter
-    - Tapp (= 1.1.22)
-    - Tapp-Adjust (= 1.1.25)
-    - Tapp-Networking (= 1.1.6)
+    - Tapp (= 1.1.24)
+    - Tapp-Adjust (= 1.1.27)
+    - Tapp-Networking (= 1.1.7)
   - Flutter (1.0.0)
   - integration_test (0.0.1):
     - Flutter
-  - Tapp (1.1.22):
+  - Tapp (1.1.24):
     - Tapp-Networking
-  - Tapp-Adjust (1.1.25):
+  - Tapp-Adjust (1.1.27):
     - Adjust
-    - Tapp
-    - Tapp-Networking
-  - Tapp-Networking (1.1.6)
+    - Tapp (>= 1.1.24)
+    - Tapp-Networking (>= 1.1.7)
+  - Tapp-Networking (1.1.7)
 
 DEPENDENCIES:
   - com_tapp_so_adjust (from `.symlinks/plugins/com_tapp_so_adjust/ios`)
@@ -42,14 +42,14 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/integration_test/ios"
 
 SPEC CHECKSUMS:
-  Adjust: 3fbf26d0880cb25d15653d68278c0c8771718458
-  AdjustSignature: 9498705a4ac67b719e31828be4d74fbb8656950c
-  com_tapp_so_adjust: f685ed582653ad7fbf0213e170b55d87df1db4dc
+  Adjust: f629975dc06e5a4c2bcda27cd78ff8a29912d7bd
+  AdjustSignature: 0b2c808c9d58e21ff394f4edc7feea70c2ee84fc
+  com_tapp_so_adjust: fca735d91262d6c759be90c6945a237481c77b98
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   integration_test: 4a889634ef21a45d28d50d622cf412dc6d9f586e
-  Tapp: 9d7581a0cd9f65f2a9f21133ff1de1d7a2fbeed4
-  Tapp-Adjust: 11f115c3880a3a14e99323e43fb5fc686caa0a37
-  Tapp-Networking: f8840f80a2bb04428fa86760e37a8333c28580f7
+  Tapp: f81b6b6d4e2872231aa735ea46327064ac752089
+  Tapp-Adjust: 3ec5ab7117d397c36eb0e7e6e65e76ccdf11e371
+  Tapp-Networking: 9a90df85acf7d9ec4804649896a1b2815a05cd1b
 
 PODFILE CHECKSUM: 1959d098c91d8a792531a723c4a9d7e9f6a01e38
 
