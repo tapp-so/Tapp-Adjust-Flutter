@@ -1,3 +1,10 @@
+## 2.0.1 - 2026-11-12
+
+### Changed
+
+- This patch pins iOS `Tapp` to `1.1.24` and `Tapp-Adjust` to `1.1.27`, and keeps `Tapp-Networking` at `1.1.7`.
+- Tapp 1.1.24 / Tapp-Adjust 1.1.27 include the stale-keychain affiliate configuration fix from Tapp-iOS: affiliate/environment is re-saved correctly, which unblocks Adjust startup on iOS.
+
 ## 2.0.0 - 2026-11-03
 
 ### Breaking

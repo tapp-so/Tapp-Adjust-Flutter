@@ -26,7 +26,7 @@
 ```yaml
 # pubspec.yaml
 dependencies:
-  com_tapp_so_adjust: ^2.0.0
+  com_tapp_so_adjust: ^2.0.1
 ```
 
 ```bash

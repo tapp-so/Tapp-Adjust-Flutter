@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'com_tapp_so_adjust'
-  s.version          = '2.0.0'
+  s.version          = '2.0.1'
   s.summary          = 'A new Flutter plugin project.'
   s.description      = <<-DESC
 A new Flutter plugin project.
@@ -21,8 +21,8 @@ A new Flutter plugin project.
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
   s.swift_version = '5.0'
 
-  s.dependency "Tapp", "= 1.1.23"
-  s.dependency "Tapp-Adjust", "= 1.1.26"
+  s.dependency "Tapp", "= 1.1.24"
+  s.dependency "Tapp-Adjust", "= 1.1.27"
   s.dependency "Tapp-Networking", "= 1.1.7"
 
   # If your plugin requires a privacy manifest, for example if it uses any
