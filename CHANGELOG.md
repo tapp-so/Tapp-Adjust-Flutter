@@ -1,3 +1,9 @@
+## 2.0.2 - unreleased
+
+### Fixed
+
+- Stop logging `authToken` and `tappToken` in the `start()` debug message.
+
 ## 2.0.1 - 2026-11-12
 
 ### Changed

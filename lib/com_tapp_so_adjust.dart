@@ -34,8 +34,7 @@ class ComTappSoAdjust {
     required EnvironmentType env,
     required String tappToken,
   }) async {
-    debugPrint(
-        '[ComTappSoAdjust.start] authToken=$authToken, env=${env.name}, tappToken=$tappToken');
+    debugPrint('[ComTappSoAdjust.start] env=${env.name}');
     if (!Platform.isAndroid && !Platform.isIOS) {
       return _unsupported('initialize');
     }
